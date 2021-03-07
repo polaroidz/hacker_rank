@@ -30,12 +30,11 @@ def merge(arr, st, mid, end):
 
     temp_idx += 1
 
-  for k in range(i, st + temp_idx):
-    arr[(mid - i) + k] = arr[k]
+  for k in range(mid - i):
+    arr[(st + temp_idx) + k] = arr[i+k]
 
-  for k in range(0, temp_idx):
+  for k in range(temp_idx):
     arr[st + k] = temp_arr[k]
-
 
 def findMedian(arr):
   merge_sort(arr, 0, len(arr))
